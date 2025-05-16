@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            cursor: none;
+        }
+        .custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: url('hand-cursor.png') no-repeat center center / contain;
+            pointer-events: none;
+            transform: translate(-60%, -60%);
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+   
+
+    <!-- Wave Background -->
+<div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+
+    <div class="sidebar">
+        <h2>Spotify Clone</h2>
+        <ul>
+            <li>Home</li>
+            <li>Search</li>
+            <li>Your Library</li>
+            <li id="toggle-theme">Toggle Theme</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>Pick a Mood</h1>
+        <p>Select a mood to get a playlist that matches your vibe!</p>
+        <div class="mood-container">
+            <button class="mood" data-mood="happy">Happy :) </button>
+            <button class="mood" data-mood="calm">Calm </button>
+            <button class="mood" data-mood="sad">Sad :( </button>
+            <button class="mood" data-mood="energetic">Energetic *-*</button>
+            <button class="mood" data-mood="one_direction">one_direction </button>
+            <button class="mood" data-mood=" trending"> trending </button>
+        </div>
+        
+        <iframe id="playlist-frame" src="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <p id="now-playing-text">Powered by Your Favorite Tunes 🎶</p>
+    </div>
+    
+    <div class="now-playing">
+        <img id="album-art" src="" alt="Album Art">
+        <div>
+            <p id="track-title">Track Title</p>
+            <p id="artist-name">Artist Name</p>
+        </div>
+        <input type="range" id="progress-bar" value="0" min="0" max="100">
+    </div>
+    
+    
+</body>
+</html>

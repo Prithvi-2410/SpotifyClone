@@ -1,0 +1,178 @@
+body {
+    cursor: none;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b, #1e90ff, #00c6ff,blue,purple,pink,#cdb4db,#ffc8dd,#ffafcc,#bde0fe,#a2d2ff,#52b69a,#f5e6e8,#d5c6e0,#aaa1c8,#967aa1,#192a51);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite linear;
+}
+
+/* Background Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Wave Background */
+.wave-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    bottom: 0;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: waveMove 10s infinite ease-in-out;
+}
+
+/* Different Speeds for a Natural Effect */
+.wave:nth-child(1) {
+    animation-duration: 6s;
+    opacity: 0.4;
+}
+.wave:nth-child(2) {
+    animation-duration: 8s;
+    opacity: 0.6;
+}
+.wave:nth-child(3) {
+    animation-duration: 10s;
+    opacity: 0.8;
+}
+
+/* Smooth Flowing Wave Animation */
+@keyframes waveMove {
+    0% { transform: translateX(-50%) translateY(10px) scale(1); }
+    50% { transform: translateX(0%) translateY(-10px) scale(1.1); }
+    100% { transform: translateX(50%) translateY(10px) scale(1); }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: url('hand-cursor.png') no-repeat center center / contain;
+    pointer-events: none;
+    transform: translate(-70%, -70%);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    color: #1db954;
+}
+
+/* Content */
+.content {
+    margin-left: 270px;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+/* Mood Buttons */
+.mood-container {
+    margin-top: 20px;
+}
+
+.mood {
+    background: #1db954;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.mood:hover {
+    background: #17a74a;
+    transform: scale(1.1);
+}
+
+/* Playlist Frame */
+#playlist-frame {
+    width: 80%;
+    height: 350px;
+    border: none;
+    margin-top: 20px;
+}
+
+/* Now Playing Section */
+.now-playing {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#album-art {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+#progress-bar {
+    width: 50%;
+    cursor: pointer;
+}@media (pointer: coarse) {
+    .custom-cursor {
+      display: none !important;
+    }
+  
+    body {
+      cursor: auto !important;
+      overflow: auto !important;
+      height: 100vh;
+    }
+  
+    html, body {
+      min-height: 100%;
+      width: 100%;
+    }
+  
+    .wave-container {
+      z-index: -2 !important; /* Push behind */
+    }
+  }
+  
